@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сайт 11Г Класса</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comfortaa', cursive;
+      background: #f2f3ff;
+      color: #2d2d2d;
+    }
+
+    header {
+      background-color: #5d50e6;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd966;
+    }
+
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .main-photo, .photo-row img, .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+    }
+
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+    }
+
+    footer {
+      background: #5d50e6;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    td, th {
+      border: 1px solid #888;
+      padding: 8px;
+      background: #fff;
+    }
+
+    th {
+      background-color: #5d50e6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Сайт 11Г Класса</h1>
+    <nav>
+      <a onclick="showPage('home')">Главная</a>
+      <a onclick="showPage('contacts')">Контакты</a>
+      <a onclick="showPage('schedule')">Расписание</a>
+      <a onclick="showPage('gallery')">Галерея</a>
+      <a onclick="showPage('about')">О классе</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Главная -->
+    <section id="home">
+      <h2>Добро пожаловать!</h2>
+      <img src="8C9F6889-F7B6-4218-8C0D-6AB1AC947D4C.jpeg" alt="Классное фото" class="main-photo" />
+      <p>Мы — дружный и яркий 11Г класс! Здесь вы найдёте расписание, фотографии, контакты и больше информации о нас.</p>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="hidden">
+      <h2>Контакты</h2>
+      <p>Классный руководитель: Лесниченко Иван Михайлович</p>
+      <p>Почта: klass11g@school.ru</p>
+	  <p>Староста: Логинова Алена</p>
+	  <p>Почта: klass11g@school.ru</p>
+      <div class="photo-row">
+        <img src="CEF7988A-3299-4FBB-B1C9-CA73008C36E9.jpeg" alt="Учитель" />
+        <img src="97AB6D58-D331-48A4-B82B-C6001CF9773F.jpeg" alt="Ответственная ученица" />
+      </div>
+    </section>
+
+    <!-- Расписание -->
+    <section id="schedule" class="hidden">
+      <h2>Расписание</h2>
+      <table>
+        <tr><th>День</th><th>Предметы</th></tr>
+        <tr><td>Понедельник</td><td>Математика, Русский, Физика</td></tr>
+        <tr><td>Вторник</td><td>Литература, История, Биология</td></tr>
+        <tr><td>Среда</td><td>Английский, География, ОБЖ</td></tr>
+        <tr><td>Четверг</td><td>Физика, Информатика, Химия</td></tr>
+        <tr><td>Пятница</td><td>Математика, Литература, Физкультура</td></tr>
+      </table>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="hidden">
+      <h2>Галерея</h2>
+      <div class="gallery">
+        <img src="D:\Notepad++\site class\1C9F6889-F7B6-4218-8C0D-6AB1AC947D4C.jpg" alt="Фото класса" />
+        <img src="CEF7988A-3299-4FBB-B1C9-CA73008C36E9.jpeg" alt="Учитель" />
+        <img src="97AB6D58-D331-48A4-B82B-C6001CF9773F.jpeg" alt="Ученица" />
+      </div>
+    </section>
+
+    <!-- О классе -->
+    <section id="about" class="hidden">
+      <h2>О 11Г</h2>
+      <p>Наш 11Г — это не просто класс, это настоящая команда. Мы участвуем в конкурсах, олимпиадах и школьных мероприятиях, поддерживаем друг друга и вместе движемся к успеху!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 11Г Класс</p>
+  </footer>
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll('main section');
+      pages.forEach(page => page.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
